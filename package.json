@@ -1,0 +1,31 @@
+{
+  "name": "tatersal-digital-ws-2",
+  "version": "2.0.0",
+  "description": "Overlay WebSocket v2.0 para OBS Browser Source",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "obs",
+    "overlay",
+    "websocket",
+    "tatersal"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "pino": "^9.4.0",
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.1"
+  }
+}

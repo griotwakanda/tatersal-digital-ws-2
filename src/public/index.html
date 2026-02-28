@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatersal Overlay v2</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="overlay" aria-live="polite">
+      <section class="status-row">
+        <span id="wsStatus" class="badge badge-warn">Conectando…</span>
+        <span id="staleStatus" class="badge">Aguardando dados</span>
+      </section>
+
+      <section class="card" id="lotCard">
+        <div class="row top">
+          <p class="label">Lote</p>
+          <p id="lotStatus" class="state state-open">ABERTO</p>
+        </div>
+        <h1 id="lotNumber">-</h1>
+        <p id="lotTitle" class="title">Aguardando lote…</p>
+
+        <div class="bid-block">
+          <p class="label">Lance Atual</p>
+          <p id="currentBid" class="bid">--</p>
+          <p id="bidder" class="bidder"></p>
+        </div>
+
+        <p id="updatedAt" class="updated-at"></p>
+      </section>
+
+      <details class="fallback">
+        <summary>Painel manual (fallback)</summary>
+        <form id="fallbackForm">
+          <label>Lote <input name="lot" placeholder="125" /></label>
+          <label>Título <input name="title" placeholder="Novilha Nelore" /></label>
+          <label>Lance <input name="bid" type="number" step="0.01" /></label>
+          <label>Status
+            <select name="status">
+              <option value="open">Aberto</option>
+              <option value="paused">Pausado</option>
+              <option value="closed">Fechado</option>
+            </select>
+          </label>
+          <label>Moeda <input name="currency" value="BRL" /></label>
+          <label>Arrematante <input name="bidder" placeholder="Nome" /></label>
+          <div class="actions">
+            <button type="submit">Aplicar manual</button>
+            <button type="button" id="manualOff">Voltar ao automático</button>
+          </div>
+        </form>
+      </details>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
